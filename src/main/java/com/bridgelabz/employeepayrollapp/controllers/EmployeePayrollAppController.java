@@ -19,6 +19,8 @@ import com.bridgelabz.employeepayrollapp.dto.ResponseDTO;
 import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 import com.bridgelabz.employeepayrollapp.service.IEmployeePayrollService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/employeepayrollservice")
 public class EmployeePayrollAppController {
@@ -45,7 +47,7 @@ public class EmployeePayrollAppController {
 	}
 
 	@PostMapping("/create")
-	public ResponseEntity<ResponseDTO> createEmployeePayrollData(@RequestBody EmployeePayrollDTO empPayrollDTO) {
+	public ResponseEntity<ResponseDTO> createEmployeePayrollData(@Valid @RequestBody EmployeePayrollDTO empPayrollDTO) {
 		EmployeePayrollData empdata = null;
 		empdata =employeePayrollService.createEmployeePayrollData(empPayrollDTO); 
 		ResponseDTO respdto = new ResponseDTO("created employeepayroll data successfully: " + empPayrollDTO, empdata);
