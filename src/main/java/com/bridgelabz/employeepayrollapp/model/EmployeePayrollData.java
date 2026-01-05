@@ -2,11 +2,15 @@ package com.bridgelabz.employeepayrollapp.model;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
+@Entity
 public class EmployeePayrollData {
 
+	@Id
 	private int employeeId;
 	private String name;
 	private long salary;
@@ -16,34 +20,10 @@ public class EmployeePayrollData {
 	}
 
 	public EmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO) {
-		super();
 		this.employeeId = empId;
-		this.name = employeePayrollDTO.name;
-		this.salary = employeePayrollDTO.salary;
-	}
+		this.name = employeePayrollDTO.getName();
+		this.salary = employeePayrollDTO.getSalary();
 
-//	public int getEmployeeId() {
-//		return employeeId;
-//	}
-//
-//	public void setEmployeeId(int employeeId) {
-//		this.employeeId = employeeId;
-//	}
-//
-//	public String getMessage() {
-//		return name;
-//	}
-//
-//	public void setMessage(String name) {
-//		this.name = name;
-//	}
-//
-//	public long getSalary() {
-//		return salary;
-//	}
-//
-//	public void setSalary(long salary) {
-//		this.salary = salary;
-//	}
+	}
 
 }

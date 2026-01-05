@@ -20,12 +20,13 @@ import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 import com.bridgelabz.employeepayrollapp.service.IEmployeePayrollService;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/employeepayrollservice")
+@AllArgsConstructor
 public class EmployeePayrollAppController {
 	
-	@Autowired
 	private IEmployeePayrollService employeePayrollService;
 
 	@RequestMapping(value = { "", "/", "/get" })

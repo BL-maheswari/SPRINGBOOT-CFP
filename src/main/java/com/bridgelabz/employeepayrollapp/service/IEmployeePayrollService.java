@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
 import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 
-@Service
+
 public interface IEmployeePayrollService {
 	
 	List<EmployeePayrollData> getEmployeePayrollData();
